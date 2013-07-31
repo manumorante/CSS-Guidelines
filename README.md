@@ -10,21 +10,20 @@
 
 ---
 
-In working on large, long running projects with dozens of developers, it is
-important that we all work in a unified way in order to, among other things:
+Al trabajar en proyectos grandes y de larga duración, con docenas de
+desarrolladores, es importante que todos trabajemos de forma unificada con el fin de, entre otras cosas:
 
-* Keep stylesheets maintainable
-* Keep code transparent and readable
-* Keep stylesheets scalable
+* Conservar hojas de estilo mantenibles
+* Conservar código transparente y legible
+* Conservar hojas de estilo escalables
 
-There are a variety of techniques we must employ in order to satisfy these
-goals.
+Hay una variedad de técnicas que debemos emplear con el fin de satisfacer estos objetivos.
 
-The first part of this document will deal with syntax, formatting and CSS
-anatomy, the second part will deal with approach, mindframe and attitude toward
-writing and architecting CSS. Exciting, huh?
+La primera parte de este documento tratará de la sintaxis, formateo y anatomía
+de del CSS, la segunda parte tratará de acercarse, a la aproximación, estado
+mental y actitud hacia la escritura y estructuración del CSS. Excitante, ¿no?
 
-## Contents
+## Contenidos
 
 * [CSS document anatomy](#css-document-anatomy)
   * [General](#general)
@@ -61,27 +60,28 @@ writing and architecting CSS. Exciting, huh?
 
 ---
 
-## CSS Document Anatomy
+## Anatomía de un documento CSS
 
-No matter the document, we must always try and keep a common formatting. This
-means consistent commenting, consistent syntax and consistent naming.
+No importa el documento, siempre debemos intentar mantener un formato común.
+Esto significa comentarios, sintaxis y nombrado consistente.
 
 ### General
 
-Limit your stylesheets to a maximum 80 character width where possible.
-Exceptions may be gradient syntax and URLs in comments. That’s fine, there’s
-nothing we can do about that.
+Limita tu hoja de estilos a un máximo de 80 caracteres de ancho cuando sea posible.
+Las excepciones quizá sean la sintaxis de degradados y URLs en comentarios.
+Está bien, no hay nada que podamos hacer al respecto.
 
-I prefer four (4) space indents over tabs and write multi-line CSS.
+Prefiero cuatro (4) espacio de tabulación y escribir CSS multilínea.
 
-### One file vs. many files
+### Un archivo vs. muchos archivos
 
-Some people prefer to work with single, large files. This is fine, and by
-sticking to the following guidelines you’ll encounter no problems. Since moving
-to Sass I have started sharding my stylesheets out into lots of tiny includes.
-This too is fine… Whichever method you choose, the following rules and
-guidelines apply. The only notable difference is with regards our table of
-contents and our section titles. Read on for further explanation…
+Algunas personas prefieren trabajar con archivos individuales, grandes. Esto esta
+bien yno encontrarás ningún problema al seguir las siguientes guías. Desde la
+migración a SASS he comenzado a fragmentar mis hojas de estilo en varios archivos
+pequeños incluidos. Esto tambien esta bien... para cualquier metodo que elijas,
+las siguientes reglas y guías se aplicarán. La única diferencia notable es la
+consideración nuestra tabla de contenidos y nuestra seccion de titulos.
+Lea para futura explicacion...
 
 ### Table of contents
 
