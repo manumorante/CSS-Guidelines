@@ -29,7 +29,7 @@ mental y actitud hacia la escritura y estructuración del CSS. Excitante, ¿no?
 
 ## Contenidos
 
-* [CSS document anatomy](#css-document-anatomy)
+* [Anatomía de un documento CSS](#css-document-anatomy)
   * [General](#general)
   * [One file vs. many files](#one-file-vs-many-files)
   * [Table of contents](#table-of-contents)
