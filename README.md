@@ -1,23 +1,27 @@
-# General CSS notes, advice and guidelines
+# Notas generales sobre CSS, consejos y directrices
 
 ---
 
-## Translations
+## Traducciones
 
 * [Russian](https://github.com/matmuchrapna/CSS-Guidelines/blob/master/README%20Russian.md)
 * [Chinese](https://github.com/chadluo/CSS-Guidelines/blob/master/README.md)
 * [French](https://github.com/flexbox/CSS-Guidelines/blob/master/README.md)
+* [Spanish](https://github.com/unavezfui/CSS-Guidelines/blob/master/README.md)
+
 
 ---
 
 Al trabajar en proyectos grandes y de larga duración, con docenas de
-desarrolladores, es importante que todos trabajemos de forma unificada con el fin de, entre otras cosas:
+desarrolladores, es importante que todos trabajemos de forma unificada con el
+fin de, entre otras cosas:
 
 * Conservar hojas de estilo mantenibles
 * Conservar código transparente y legible
 * Conservar hojas de estilo escalables
 
-Hay una variedad de técnicas que debemos emplear con el fin de satisfacer estos objetivos.
+Hay una variedad de técnicas que debemos emplear con el fin de satisfacer estos
+objetivos.
 
 La primera parte de este documento tratará de la sintaxis, formateo y anatomía
 de del CSS, la segunda parte tratará de acercarse, a la aproximación, estado
