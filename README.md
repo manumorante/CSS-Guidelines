@@ -24,14 +24,14 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
 
 ## Contenidos
 
-* [Anatomía de un documento CSS](#css-document-anatomy)
+* [Anatomía de un documento CSS](#anatomia-de-un-documento-css)
   * [General](#general)
   * [Un archivo vs. varios archivos](#un-archivo-vs-varios-archivos)
   * [Tabla de contenidos](#tabla-de-contenidos)
   * [Títulos de sección](#titulos-de-seccion)
 * [Orden del código](#orden-del-codigo)
 * [Anatomía de los conjuntos de reglas.](#anatomia-de-los-conjuntos-de-reglas)
-* [Naming conventions](#naming-conventions)
+* [Convenciones de nombres](#convenciones-de-nombres)
   * [JS hooks](#js-hooks)
   * [Internationalisation](#internationalisation)
 * [Comments](#comments)
@@ -196,60 +196,39 @@ Una excepción para nuestra regla multilínea podría ser en casos de lo siguien
 
 En este ejemplo (del [sistema de cuadrícula de inuit.css](https://github.com/csswizardry/inuit.css/blob/master/inuit.css/partials/base/_tables.scss#L88)) tiene más sentido poner nuestro CSS en una sola línea.
 
-## Naming conventions
+## Convenciones de nombres
 
-For the most part I simply use hyphen delimited classes (e.g. `.foo-bar`, not
-`.foo_bar` or `.fooBar`), however in certain circumstances I use BEM (Block,
-Element, Modifier) notation.
+Para la mayor parte simplemente uso clases delimitadas por guiones (p.ej. `.foo-bar`, no `.foo_bar` o `.fooBar`), sin embargo en ciertas circunstancias uso notación BEM (Bloque, Elemento, Modificador).
 
-<abbr title="Block, Element, Modifier">BEM</abbr> is a methodology for naming
-and classifying CSS selectors in a way to make them a lot more strict,
-transparent and informative.
+<abbr title="Block, Element, Modifier">BEM</abbr> es una metodología para denominar y clasificar selectores CSS de forma que se los hace mucho más estrictos, transparentes e informativos.
 
-The naming convention follows this pattern:
+La convención de nombres sigue este patrón:
 
-    .block{}
-    .block__element{}
-    .block--modifier{}
+    .bloque{}
+    .bloque__elemento{}
+    .bloque--modificador{}
 
-* `.block` represents the higher level of an abstraction or component.
-* `.block__element` represents a descendent of `.block` that helps form `.block`
-  as a whole.
-* `.block--modifier` represents a different state or version of `.block`.
+* `.bloque` representa el nivel más alto de una abstracción o componente.
+* `.bloque__elemento` representa un descendiente de `.bloque` que ayuda a formar `.bloque` como un todo.
+* `.bloque--modificador` representa un estado o versión diferente de `.bloque`.
 
-An **analogy** of how BEM classes work might be:
+Una **anología** de cómo trabajan las clases BEM podría ser:
 
-    .person{}
-    .person--woman{}
-        .person__hand{}
-        .person__hand--left{}
-        .person__hand--right{}
+    .persona{}
+    .persona--mujer{}
+        .persona__mano{}
+        .persona__mano--izquierda{}
+        .persona__mano--derecha{}
 
-Here we can see that the basic object we’re describing is a person, and that a
-different type of person might be a woman. We can also see that people have
-hands; these are sub-parts of people, and there are different variations,
-like left and right.
+Aquí podemos ver que el objeto básico que estamos describiendo es una persona, y que un tipo diferente de persona podría ser una mujer. También podemos ver que las personas tienen manos; estas son sub-partes de las personas y hay diferentes variaciones, como izquierda y derecha.
 
-We can now namespace our selectors based on their base objects and we can also
-communicate what job the selector does; is it a sub-component (`__`) or a
-variation (`--`)?
+Ahora podemos nombrar nuestros selectores basándonos en sus objetos base, y también comunicar qué trabajo hace el selector; ¿Es un subcomponente (`__`) o una variación (`--`)?
 
-So, `.page-wrapper` is a standalone selector; it doesn’t form part of an
-abstraction or a component and as such it named correctly. `.widget-heading`,
-however, _is_ related to a component; it is a child of the `.widget` construct
-so we would rename this class `.widget__heading`.
+Así, `.page-wrapper` es un selector independiente; no forma parte de una abstracción o un componente y como tal es nombrado correctamente. `.widget-heading`, no obstante, _está_ relacionado con un componente; es un hijo de la estructura `.widget` así que renombraríamos esta clase `.widget__heading`.
 
-BEM looks a little uglier, and is a lot more verbose, but it grants us a lot of
-power in that we can glean the functions and relationships of elements from
-their classes alone. Also, BEM syntax will typically compress (gzip) very well
-as compression favours/works well with repetition.
+BEM parece un poco más feo, y es mucho más verboso, pero nos da mucho poder en la obtención de información sobre las funciones y relaciones de los elementos únicamente con sus clases. Además, la sintaxis BEM se comprimirá (gzip) por lo general muy bien ya que la compresión favorece/funciona bien con la repetición.
 
-Regardless of whether you need to use BEM or not, always ensure classes are
-sensibly named; keep them as short as possible but as long as necessary. Ensure
-any objects or abstractions are very vaguely named (e.g. `.ui-list`, `.media`)
-to allow for greater reuse. Extensions of objects should be much more explicitly
-named (e.g. `.user-avatar-link`). Don’t worry about the amount or length of
-classes; gzip will compress well written code _incredibly_ well.
+Independientemente de si necesitas usar BEM o no, asegúrate siempre de que las clases están nombradas con sensatez; mantenlas lo más cortas posible pero tan largas como sea necesario. Asegúrate de que todos los objetos o abstracciones están muy vagamente nombrados (p.ej. `.ui-list`, `.media`) para permitir una mayor reutilización. Las extensiones de los objetos deberían estar nombradas de forma mucho más explícita (p.ej. `.user-avatar-link`). No te preocupes por la cantidad o longitud de las clases; gzip coprimirá el código bien escrito _increíblemente_ bien.
 
 ### Classes in HTML
 
