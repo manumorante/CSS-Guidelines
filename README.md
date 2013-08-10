@@ -230,15 +230,13 @@ BEM parece un poco más feo, y es mucho más verboso, pero nos da mucho poder en
 
 Independientemente de si necesitas usar BEM o no, asegúrate siempre de que las clases están nombradas con sensatez; mantenlas lo más cortas posible pero tan largas como sea necesario. Asegúrate de que todos los objetos o abstracciones están muy vagamente nombrados (p.ej. `.ui-list`, `.media`) para permitir una mayor reutilización. Las extensiones de los objetos deberían estar nombradas de forma mucho más explícita (p.ej. `.user-avatar-link`). No te preocupes por la cantidad o longitud de las clases; gzip coprimirá el código bien escrito _increíblemente_ bien.
 
-### Classes in HTML
+### Clases en HTML
 
-In a bid to make things easier to read, separate classes is your HTML with two
-(2) spaces, thus:
+En un intento por hacer las cosas más fáciles de leer, separa las clases en HTML con dos (2) espacios, de este modo:
 
     <div class="foo--bar  bar__baz">
 
-This increased whitespace should hopefully allow for easier spotting and reading
-of multiple classes.
+Este aumento de los espacios en blanco debería, con suerte, permitir una localización y lectura más fácil de las clases múltiples.
 
 ### JS hooks
 
