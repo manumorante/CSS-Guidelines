@@ -36,11 +36,11 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
   * [Internacionalización](#internacionalización)
 * [Comentarios](#comentarios)
   * [Comments on steroids](#comments-on-steroids)
-    * [Quasi-qualified selectors](#quasi-qualified-selectors)
-    * [Tagging code](#tagging-code)
-    * [Object/extension pointers](#objectextension-pointers)
-* [Writing CSS](#writing-css)
-* [Building new components](#building-new-components)
+    * [Selectores cuasi-calificados](#selectores-cuasi-calificados)
+    * [Código de etiquetas](#código-de-etiquetas)
+    * [Indicadores de objeto/extensión](#indicadores-de-objeto-extensión)
+* [Escribiendo CSS](#escribiendo-css)
+* [Construir nuevos componentes](#construir-nuevos-componentes)
 * [OOCSS](#oocss)
 * [Layout](#layout)
 * [Sizing UIs](#sizing-uis)
@@ -349,20 +349,15 @@ Aquí hemos establecido una relación concreta entre dos trozos de código muy s
 
 ---
 
-## Writing CSS
+## Escribiendo CSS
 
-The previous section dealt with how we structure and form our CSS; they were
-very quantifiable rules. The next section is a little more theoretical and deals
-with our attitude and approach.
+La sección anterior trataba cómo estructuramos y formamos nuestro CSS; eran reglas muy cuantificables. La siguiente sección es un poco más teórica y trata nuestra actitud y enfoque.
 
-## Building new components
+## Construir nuevos componentes
 
-When building a new component write markup **before** CSS. This means you can
-visually see which CSS properties are naturally inherited and thus avoid
-reapplying redundant styles.
+Al construir un componente nuevo escribe una anotación **antes** del CSS. Esto significa que puedes reconocer visualmente qué propiedades CSS se heredan de forma natural y así evitar volver a aplicar estilos redundantes.
 
-By writing markup first you can focus on data, content and semantics and then
-apply only the relevant classes and CSS _afterwards_.
+Escribiendo anotaciones primero, puedes centrarte en los datos, contenido y semántica y entonces , después, aplicar sólo el CSS y las clases _relevantes_.
 
 ## OOCSS
 
