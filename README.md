@@ -28,13 +28,13 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
   * [General](#general)
   * [Un archivo vs. varios archivos](#un-archivo-vs-varios-archivos)
   * [Tabla de contenidos](#tabla-de-contenidos)
-  * [Títulos de sección](#títulos-de-seccion)
+  * [Títulos de sección](#títulos-de-sección)
 * [Orden del código](#orden-del-código)
 * [Anatomía de los conjuntos de reglas.](#anatomía-de-los-conjuntos-de-reglas)
 * [Convenciones de nombres](#convenciones-de-nombres)
   * [Anclas JS](#anclas-js)
   * [Internacionalización](#internacionalización)
-* [Comments](#comments)
+* [Comentarios](#comentarios)
   * [Comments on steroids](#comments-on-steroids)
     * [Quasi-qualified selectors](#quasi-qualified-selectors)
     * [Tagging code](#tagging-code)
@@ -261,74 +261,59 @@ En cualquier caso, habiendo trabajado recientemente en un proyecto Sass en el qu
 
 Para favorecer la consistencia, nombra siempre las clases y variables en la versión local del lenguaje con el que estás trabajando.
 
-## Comments
+## Comentarios
 
-I use a docBlock-esque commenting style which I limit to 80 characters in length:
+Yo uso un estilo de comentarios docBlockesco el cual limito a 80 caracteres de longitud:
 
     /**
-     * This is a docBlock style comment
+     * Este es un comentario de estilo docBlock
      *
-     * This is a longer description of the comment, describing the code in more
-     * detail. We limit these lines to a maximum of 80 characters in length.
+     * Esta es una descripción más larga del comentario, describiendo el código con más
+     * detalle Limitamos estas líneas a un máximo de 80 caracteres de longitud.
      *
-     * We can have markup in the comments, and are encouraged to do so:
+     * Podemos tener marcado en los comentarios, y se nos anima a hacerlo:
      *
        <div class=foo>
            <p>Lorem</p>
        </div>
      *
-     * We do not prefix lines of code with an asterisk as to do so would inhibit
-     * copy and paste.
+     * No prefijamos las líneas de código con un asterisco, ya que hacerlo dificultaría
+     * el copiar y pegar.
      */
 
-You should document and comment our code as much as you possibly can, what may
-seem or feel transparent and self explanatory to you may not be to another dev.
-Write a chunk of code then write about it.
+Deberías documentar y comentar nuestro código tanto como puedas, lo que para tí podría parecer transparente y que se explica por sí mismo, puede no serlo para otro desarrollador. Escribe un trozo de código y luego escribe sobre él.
 
-### Comments on steroids
+### Comentarios en esteroides
 
-There are a number of more advanced techniques you can employ with regards
-comments, namely:
+Hay un número de técnicas más avanzadas que puedes emplear en relación a los comentarios, a saber:
 
-* Quasi-qualified selectors
-* Tagging code
-* Object/extension pointers
+* Selectores cuasi-calificados
+* Código de etiquetas
+* Indicadores de objeto/extensión
 
-#### Quasi-qualified selectors
+#### Selectores cuasi-calificados
 
-You should never qualify your selectors; that is to say, we should never write
-`ul.nav{}` if you can just have `.nav`. Qualifying selectors decreases selector
-performance, inhibits the potential for reusing a class on a different type of
-element and it increases the selector’s specificity. These are all things that
-should be avoided at all costs.
+Nunca deberías calificar tus selectores; es decir, nunca deberíamos escribir `ul.nav{}` pudiendo tener simplemente `.nav`. Calificar los selectores disminuye la acción de los selectores, inhibe el potencial de reutilizar una clase en un tipo distinto de elemento y aumenta la especificidad del selector. Todas estas son cosas que deberían ser evitadas a toda costa.
 
-However, sometimes it is useful to communicate to the next developer(s) where
-you intend a class to be used. Let’s take `.product-page` for example; this
-class sounds as though it would be used on a high-level container, perhaps the
-`html` or `body` element, but with `.product-page` alone it is impossible to
-tell.
+Sin embargo, a veces es útil comunicarle al siguiente desarrollador dónde pretendes que una clase sea utilizada. Tomemos `.product-page` como ejemplo; esta clase suena como si fuera a ser usada en un contenedor de alto nivel, quizás en el elemento `body` o `html`, pero sólo con `.product-page` es imposible adivinarlo.
 
-By quasi-qualifying this selector (i.e. commenting out the leading type
-selector) we can communicate where we wish to have this class applied, thus:
+Cuasi-calificando este selector (p.ej, comentando fuera del selector de tipo guía) podemos comunicar dónde queremos que esta clase sea aplicada, de este modo:
 
     /*html*/.product-page{}
 
-We can now see exactly where to apply this class but with none of the
-specificity or non-reusability drawbacks.
+Ahora podemos ver exactamente dónde aplicar esta clase, pero sin ninguno de los inconvenientes de especificidad o no reusabilidad.
 
-Other examples might be:
+Otros ejemplos podrían ser:
 
     /*ol*/.breadcrumb{}
     /*p*/.intro{}
     /*ul*/.image-thumbs{}
 
-Here we can see where we intend each of these classes to be applied without
-actually ever impacting the specificity of the selectors.
+Aquí podemos ver dónde pretendemos que cada una de estas clases sean aplicadas sin ni siquiera tener un impacto en la especificidad de los selectores.
 
-#### Tagging code
+#### Etiquetando código
 
-If you write a new component then leave some tags pertaining to its function in
-a comment above it, for example:
+Si escribes un nuevo componente, deja algunas etiquetas relacionadas con su función en un comentario por encima, por ejemplo:
 
     /**
      * ^navigation ^lists
@@ -340,35 +325,27 @@ a comment above it, for example:
      */
     .matrix{}
 
-These tags allow other developers to find snippets of code by searching for
-function; if a developer needs to work with lists they can run a find for
-`^lists` and find the `.nav` and `.matrix` objects (and possibly more).
+Estas etiquetas permiten a los demás desarrolladores encontrar fragmentos de código buscando por función; si un desarrollador necesita trabajar con listas puede buscar `^listas` y encontrar los objetos `.nav` y `.matrix` (y posiblemente más).
 
-#### Object/extension pointers
+#### Indicadores de objeto/extensión
 
-When working in an object oriented manner you will often have two chunks of CSS
-(one being the skeleton (the object) and the other being the skin (the
-extension)) that are very closely related, but that live in very different
-places. In order to establish a concrete link between the object and its
-extension with use <i>object/extension pointers</i>. These are simply comments
-which work thus:
+Al trabajar de una forma orientada a objetos, con frecuencia tendrás dos trozos de CSS (siendo una el esqueleto (el objeto) y la otra la piel (la extensión)) muy estrechamente relacionados, pero que se encuentran en lugares muy diferentes. Para establecer una conexión concreta entre el objeto y su extensión, utiliza indicadores de objeto/extensión. Son simplemente comentarios que trabajan así:
 
-In your base stylesheet:
+En tu hoja de estilos base:
 
     /**
-     * Extend `.foo` in theme.css
+     * Extendido `.foo` en theme.css
      */
      .foo{}
 
-In your theme stylesheet:
+En tu hoja de estilos plantilla:
 
     /**
-     * Extends `.foo` in base.css
+     * Extiende `.foo` en base.css
      */
      .bar{}
 
-Here we have established a concrete relationship between two very separate
-pieces of code.
+Aquí hemos establecido una relación concreta entre dos trozos de código muy separados.
 
 ---
 
