@@ -24,16 +24,16 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
 
 ## Contenidos
 
-* [Anatomía de un documento CSS](#anatomia-de-un-documento-css)
+* [Anatomía de un documento CSS](#anatomía-de-un-documento-css)
   * [General](#general)
   * [Un archivo vs. varios archivos](#un-archivo-vs-varios-archivos)
   * [Tabla de contenidos](#tabla-de-contenidos)
-  * [Títulos de sección](#titulos-de-seccion)
-* [Orden del código](#orden-del-codigo)
-* [Anatomía de los conjuntos de reglas.](#anatomia-de-los-conjuntos-de-reglas)
+  * [Títulos de sección](#títulos-de-seccion)
+* [Orden del código](#orden-del-código)
+* [Anatomía de los conjuntos de reglas.](#anatomía-de-los-conjuntos-de-reglas)
 * [Convenciones de nombres](#convenciones-de-nombres)
-  * [JS hooks](#js-hooks)
-  * [Internationalisation](#internationalisation)
+  * [Anclas JS](#anclas-js)
+  * [Internacionalización](#internacionalización)
 * [Comments](#comments)
   * [Comments on steroids](#comments-on-steroids)
     * [Quasi-qualified selectors](#quasi-qualified-selectors)
@@ -249,26 +249,17 @@ Si necesitas agarrarte a alguna anotación, usa una clase CSS específica de JS.
 
 La anotación anterior contiene dos clases; una a la que puedes adjuntar algo de estilo para columnas de tabla clasificables y otra que te permite añadir la funcionalidad de clasificación.
 
-### Internationalisation
+### Internacionalización
 
-Despite being a British developer—and spending all my life writing <i>colour</i>
-instead of <i>color</i>—I feel that, for the sake of consistency, it is better
-to always use US-English in CSS. CSS, as with most (if not all) other languages,
-is written in US-English, so to mix syntax like `color:red;` with classes like
-`.colour-picker{}` lacks consistency. I have previously suggested and advocated
-writing bilingual classes, for example:
+A pesar de ser un desarrollador británico —y haber pasado toda mi vida escribiendo "colour" en lugar de "color"— siento que, por el bien de la consistencia, es mejor usar siempre inglés estadounidense en el CSS. CSS, como la mayoría (si no todos) de los demás lenguajes, está escrito en inglés estadounidense, así que mezclar sintaxis como `color:red;` con clases como `.colour-picker{}` carece de consistencia. Previamente he sugerido y recomendado escribir clases bilingües, por ejemplo:
 
     .color-picker,
     .colour-picker{
     }
 
-However, having recently worked on a very large Sass project where there were
-dozens of colour variables (e.g. `$brand-color`, `$highlight-color` etc.),
-maintaining two versions of each variable soon became tiresome. It also means
-twice as much work with things like find and replace.
+En cualquier caso, habiendo trabajado recientemente en un proyecto Sass en el que había docenas de variables de color (p.ej. `$brand-color`, `$highlight-color` etc.), mantener dos versiones de cada variable pronto acabó siendo pesado. También significa el doble de trabajo con cosas como encontrar un reemplazo.
 
-In the interests of consistency, always name classes and variables in the locale
-of the language you are working with.
+Para favorecer la consistencia, nombra siempre las clases y variables en la versión local del lenguaje con el que estás trabajando.
 
 ## Comments
 
