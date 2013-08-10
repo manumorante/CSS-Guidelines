@@ -26,11 +26,11 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
 
 * [Anatomía de un documento CSS](#css-document-anatomy)
   * [General](#general)
-  * [One file vs. many files](#one-file-vs-many-files)
-  * [Table of contents](#table-of-contents)
-  * [Section titles](#section-titles)
-* [Source order](#source-order)
-* [Anatomy of rulesets](#anatomy-of-rulesets)
+  * [Un archivo vs. varios archivos](#un-archivo-vs-varios-archivos)
+  * [Tabla de contenidos](#tabla-de-contenidos)
+  * [Títulos de sección](#titulos-de-seccion)
+* [Orden del código](#orden-del-codigo)
+* [Anatomía de los conjuntos de reglas.](#anatomia-de-los-conjuntos-de-reglas)
 * [Naming conventions](#naming-conventions)
   * [JS hooks](#js-hooks)
   * [Internationalisation](#internationalisation)
@@ -137,25 +137,24 @@ Esto significa que -- mientras recorres el documento--cada sección se construye
 
 Para lectura adicional no puedo recomendar lo suficiente a [SMACSS](http://smacss.com) de Jonathan Snook.
 
-## Anatomy of rulesets
+## Anatomía de los conjuntos de reglas.
 
     [selector]{
-        [property]:[value];
-        [<- Declaration ->]
+        [propiedad]:[valor];
+        [<- Declaración ->]
     }
 
-I have a number of standards when structuring rulesets.
+Tengo un número de estándares cuando estructuro conjuntos de reglas.
 
-* Use hyphen delimited class names (except for BEM notation,
-  [see below](#naming-conventions))
-* 4 space indented
-* Multi-line
-* Declarations in relevance (NOT alphabetical) order
-* Indent vendor prefixed declarations so that their values are aligned
-* Indent our rulesets to mirror the DOM
-* Always include the final semi-colon in a ruleset
+* Usa nombres de clases delimitados por guiones [see below](#naming-conventions))
+* Indentación de 4 espacios
+* Multilínea
+* Declaraciones por orden de relevancia (no alfabético)
+* Indentar las declaraciones de prefijos para que sus valores estén alineados
+* Indentar nuestros conjuntos de reglas para reflejar el DOM
+* Incluir siempre el punto y coma al final de un conjunto de reglas
 
-A brief example:
+Un breve ejemplo:
 
     .widget{
         padding:10px;
@@ -175,16 +174,11 @@ A brief example:
             padding:0.25em;
         }
 
-Here we can see that `.widget-heading` must be a child of `.widget` as we have
-indented the `.widget-heading` ruleset one level deeper than `.widget`. This is
-useful information to developers that can now be gleaned just by a glance at the
-indentation of our rulesets.
+Aquí podemos ver que `.widget-heading` debe ser un hijo de `.widget` como hemos indentado el conjunto de reglas de `.widget-heading` un nivel más profundo que `.widget`. Esta es una información útil para los desarrolladores que ahora puede ser obtenida con sólo una mirada a la indentación de nuestros conjuntos de reglas.
 
-We can also see that `.widget-heading`’s declarations are ordered by their
-relevance; `.widget-heading` must be a textual element so we begin with our
-text rules, followed by everything else.
+También podemos ver que las declaraciones de `.widget-heading` están ordenadas por su relevancia; `.widget-heading` debe de ser un elemento textual así que empezamos con nuestras reglas de texto, seguidas de todo lo demás.
 
-One exception to our multi-line rule might be in cases of the following:
+Una excepción para nuestra regla multilínea podría ser en casos de lo siguiente:
 
     .t10    { width:10% }
     .t20    { width:20% }
@@ -200,8 +194,7 @@ One exception to our multi-line rule might be in cases of the following:
     .t80    { width:80% }
     .t90    { width:90% }
 
-In this example (from [inuit.css’s table grid system](https://github.com/csswizardry/inuit.css/blob/master/inuit.css/partials/base/_tables.scss#L88))
-it makes more sense to single-line our CSS.
+En este ejemplo (del [sistema de cuadrícula de inuit.css](https://github.com/csswizardry/inuit.css/blob/master/inuit.css/partials/base/_tables.scss#L88)) tiene más sentido poner nuestro CSS en una sola línea.
 
 ## Naming conventions
 
