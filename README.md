@@ -75,46 +75,39 @@ Algunas personas prefieren trabajar con un solo archivo individual, grande. Esto
 
 ### Tabla de contenidos
 
-At the top of stylesheets, I maintain a table of contents which will detail the
-sections contained in the document, for example:
+Al principio de las hojas de estilos, mantengo una tabla de contenidos la cual detallará las secciones contenidas en el documento, por ejemplo:
 
     /*------------------------------------*\
-        $CONTENTS
+        $CONTENIDOS
     \*------------------------------------*/
     /**
-     * CONTENTS............You’re reading it!
-     * RESET...............Set our reset defaults
-     * FONT-FACE...........Import brand font files
+     * CONTENIDOS..........¡Lo estás leyendo!
+     * RESET...............Estabecer nuestro reset por defecto
+     * FONT-FACE...........Importar archivos de fuentes
      */
 
-This will tell the next developer(s) exactly what they can expect to find in
-this file. Each item in the table of contents maps directly to a section title.
+Esto dirá a los siguientes desarrolladores exactamente lo que pueden esperar encontrar en este archivo. Cada elemento en la tabla de contenidos se aplica directamente a un título de sección.
 
-If you are working in one big stylesheet, the corresponding section will also be
-in that file. If you are working across multiple files then each item in the
-table of contents will map to an include which pulls that section in.
+Si estás trabajando en una hoja de estilos grande, la sección correspondiente también estará en ese archivo. Si estás trabajando con múltiples archivos entonces cada elemento en la tabla de contenido apuntará a un incluido que traerá esa sección.
 
-### Section titles
+### Títulos de sección
 
-The table of contents would be of no use unless it had corresponding section
-titles. Denote a section thus:
+La tabla de contenidos no sería de ningún uso a menos que tuviese los correspondientes títulos de sección. Por lo tanto, designemos una sección:
 
     /*------------------------------------*\
         $RESET
     \*------------------------------------*/
 
-The `$` prefixing the name of the section allows us to run a find ([Cmd|Ctrl]+F)
-for `$[SECTION-NAME]` and **limit our search scope to section titles only**.
+La `$` prefijando al nombre de la sección nos permite ejecutar una búsqueda ([Cmd|Ctrl]+F) para `$[NOMBRE-DE-SECCIÓN]` y **limitar nuestro ámbito de búsqueda sólo a los títulos de sección**.
 
-If you are working in one large stylesheet, you leave five (5) carriage returns
-between each section, thus:
+Si estás trabajando en una hoja de estilos grande, dejas cinco (5) saltos de línea entre cada sección, así:
 
     /*------------------------------------*\
         $RESET
     \*------------------------------------*/
-    [Our
-    reset
-    styles]
+    [Nuestros
+    estilos
+    de reseteo]
 
 
 
@@ -124,32 +117,25 @@ between each section, thus:
         $FONT-FACE
     \*------------------------------------*/
 
-This large chunk of whitespace is quickly noticeable when scrolling quickly
-through larger files.
+Este gran trozo de espacios en blanco es rápidamente perceptible cuando se desplaza rápidamente a través de archivos grandes.
 
-If you are working across multiple, included stylesheets, start each of those
-files with a section title and there is no need for any carriage returns.
+Si estás trabajando a través de múltiples hojas de estilo incluidas, comienza cada uno de esos archivos con un título de sección y no hay necesidad de ningún salto de línea.
 
-## Source order
+## Orden del código
 
-Try and write stylesheets in specificity order. This ensures that you take full
-advantage of inheritance and CSS’ first <i>C</i>; the cascade.
+Prueba y escribe las hojas de estilo en orden de especificidad. Esto asegura que tomes completa ventaja de la herencia y de la primera C de CSS; la Cascada.
 
-A well ordered stylesheet will be ordered something like this:
+Una hoja de estilo bien ordenada se ordenará de forma parecida a esta:
 
-1. **Reset** – ground zero.
-2. **Elements** – unclassed `h1`, unclassed `ul` etc.
-3. **Objects and abstractions** — generic, underlying design patterns.
-4. **Components** – full components constructed from objects and their
-   extensions.
-5. **Style trumps** – error states etc.
+1. **Reset** – empezamos de cero.
+2. **Elements** – `h1` sin clase, `ul` sin clase etc.
+3. **Objetos y abstracciones** — genéricos, patrones de diseño subyacente.
+4. **Componentes** – Componentes - componentes completos construidos a partir de los objetos y sus extensiones.
+5. **Buen estilo** – Estados de error, etc.
 
-This means that—as you go down the document—each section builds upon and
-inherits sensibly from the previous one(s). There should be less undoing of
-styles, less specificity problems and all-round better architected stylesheets.
+Esto significa que -- mientras recorres el documento--cada sección se construye sobre y se hereda sensatamente de las anteriores. Debería haber menos deshacer de estilos, menos problemas de especificidad y hojas de estilo mejor estructuradas en todos los sentidos.
 
-For further reading I cannot recommend Jonathan Snook’s
-[SMACSS](http://smacss.com) highly enough.
+Para lectura adicional no puedo recomendar lo suficiente a [SMACSS](http://smacss.com) de Jonathan Snook.
 
 ## Anatomy of rulesets
 
