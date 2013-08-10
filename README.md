@@ -240,20 +240,14 @@ Este aumento de los espacios en blanco debería, con suerte, permitir una locali
 
 ### JS hooks
 
-**Never use a CSS _styling_ class as a JavaScript hook.** Attaching JS behaviour
-to a styling class means that we can never have one without the other.
+**Nunca uses una clase de _estilo_ CSS como un ancla de JavaScript.** Asociar un comportamiento JS a una clase de estilo significa que nunca podremos tener uno sin el otro.
 
-If you need to bind to some markup use a JS specific CSS class. This is simply a
-class namespaced with `.js-`, e.g. `.js-toggle`, `.js-drag-and-drop`. This means
-that we can attach both JS and CSS to classes in our markup but there will never
-be any troublesome overlap.
+Si necesitas agarrarte a alguna anotación, usa una clase CSS específica de JS. Esto es simplemente una clase con una denominación `.js-`, p.ej: `.js-toggle`, `.js-drag-and-drop`. Esto significa que podemos asociar tanto JS como CSS a las clases en nuestra anotación  pero nunca habrá ningún solapado problemático.
 
     <th class="is-sortable  js-is-sortable">
     </th>
 
-The above markup holds two classes; one to which you can attach some styling for
-sortable table columns and another which allows you to add the sorting
-functionality.
+La anotación anterior contiene dos clases; una a la que puedes adjuntar algo de estilo para columnas de tabla clasificables y otra que te permite añadir la funcionalidad de clasificación.
 
 ### Internationalisation
 
