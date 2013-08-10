@@ -12,20 +12,15 @@
 
 ---
 
-Al trabajar en proyectos grandes y de larga duración, con docenas de
-desarrolladores, es importante que todos trabajemos de forma unificada con el
-fin de, entre otras cosas:
+Al trabajar en proyectos grandes y de larga duración con docenas de desarrolladores, es importante que todos trabajemos de manera unificada con el fin de, entre otras cosas:
 
-* Conservar hojas de estilo mantenibles
-* Conservar código transparente y legible
-* Conservar hojas de estilo escalables
+* Dejar las hojas de estilo mantenibles.
+* Dejar el código transparente y legible.
+* Dejar las hojas de estilo escalables.
 
-Hay una variedad de técnicas que debemos emplear con el fin de satisfacer estos
-objetivos.
+Hay una variedad de técnicas que debemos emplear con el fin de satisfacer estos objetivos.
 
-La primera parte de este documento tratará de la sintaxis, formateo y anatomía
-de del CSS, la segunda parte tratará de acercarse, a la aproximación, estado
-mental y actitud hacia la escritura y estructuración del CSS. Excitante, ¿no?
+La primera parte de este documento tratará de la sintaxis, formateo y estructura del CSS, la segunda parte tratará del enfoque, perspectiva y actitud hacia la escritura y arquitectura del CSS. Excitante, ¿eh?
 
 ## Contenidos
 
@@ -66,28 +61,19 @@ mental y actitud hacia la escritura y estructuración del CSS. Excitante, ¿no?
 
 ## Anatomía de un documento CSS
 
-No importa el documento, siempre debemos intentar mantener un formato común.
-Esto significa comentarios, sintaxis y nombrado consistente.
+Independiente del documento, siempre debemos probar y mantener un formato común. Esto significa comentarios consistentes, sintaxis consistente y nomenclatura consistente.
 
 ### General
 
-Limita tu hoja de estilos a un máximo de 80 caracteres de ancho cuando sea posible.
-Las excepciones quizá sean la sintaxis de degradados y URLs en comentarios.
-Está bien, no hay nada que podamos hacer al respecto.
+Limita tus hojas de estilos a un máximo de 80 caracteres de ancho donde sea posible. Las excepciones pueden ser la sintaxis de degradados y URLs en comentarios Está bien, no hay nada que podamos hacer al respecto.
 
-Prefiero cuatro (4) espacio de tabulación y escribir CSS multilínea.
+Prefiero las indentaciones de cuatro (4) espacios en lugar de los tabuladores y escribir CSS multilínea.
 
-### Un archivo vs. muchos archivos
+### Un archivo vs. varios archivos
 
-Algunas personas prefieren trabajar con archivos individuales, grandes. Esto esta
-bien yno encontrarás ningún problema al seguir las siguientes guías. Desde la
-migración a SASS he comenzado a fragmentar mis hojas de estilo en varios archivos
-pequeños incluidos. Esto tambien esta bien... para cualquier metodo que elijas,
-las siguientes reglas y guías se aplicarán. La única diferencia notable es la
-consideración nuestra tabla de contenidos y nuestra seccion de titulos.
-Lea para futura explicacion...
+Algunas personas prefieren trabajar con un solo archivo individual, grande. Esto está bien, por señirte a las pautas a continuación no encontrarás problemas. Desde la migración a SASS he comenzado a fragmentar mis hojas de estilo en montones de incluidos diminutos. Esto también está bien... Sea cual sea el método que elijas, las siguientes reglas y directrices se aplican. La única diferencia notable es en relación a nuestra tabla de contenidos y nuestros títulos de secciones. Sigue leyendo para una explicación más detallada...
 
-### Table of contents
+### Tabla de contenidos
 
 At the top of stylesheets, I maintain a table of contents which will detail the
 sections contained in the document, for example:
