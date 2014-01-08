@@ -45,7 +45,7 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
 * [Layout](#layout)
 * [Dimensionando ULs](#dimensionando-uls)
   * [Dimensionando fuentes](#Dimensionando-fuentes)
-* [Shorthand](#shorthand)
+* [Abreviaturas](#abreviaturas)
 * [IDs](#ids)
 * [Selectors](#selectors)
   * [Over qualified selectors](#over-qualified-selectors)
@@ -410,25 +410,17 @@ Yo solamente uso los píxeles para los elementos cuyas dimensiones estaban ya de
 
 Yo defino una serie de clases parecida a un sistema de retícula para dimensionar las fuentes.   Estas   clases pueden ser utilizadas para dar al texto un estilo de jerarquía de encabezados de doble línea.   Para una   explicación completa de cómo funciona esto, por favor, dirígete a mi artículo [Dimensionado de fuentes práctico y pragmático en CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css).  
 
-## Shorthand
+## Abreviaturas
 
-**Shorthand CSS needs to be used with caution.**
+**El CSS abreviada debe usarse con precaución.**
 
-It might be tempting to use declarations like `background:red;` but in doing so
-what you are actually saying is ‘I want no image to scroll, aligned top-left,
-repeating X and Y, and a background colour of red’. Nine times out of ten this
-won’t cause any issues but that one time it does is annoying enough to warrant
-not using such shorthand. Instead use `background-color:red;`.
+Tal vez sea tentador utilizar declaraciones como `background: red;` pero haciendo esto, lo que realmente estás diciendo es "Quiero que ninguna imagen haga scroll, alineado superior izquierdo, repetir X e Y, y un color de fondo rojo".   Nueve veces de cada diez, esto   no provocará ningún problema, pero la vez que sí lo hace es lo bastante molesta como para garantizar   no usar este tipo de anotación.   En su lugar, utiliza `background-color: red;`.
 
-Similarly, declarations like `margin:0;` are nice and short, but
-**be explicit**. If you actually only really want to affect the margin on
-the bottom of an element then it is more appropriate to use `margin-bottom:0;`.
+De forma similar, las declaraciones como `margin:0;` son cortas y agradables, pero **sé explícito**.  Si realmente sólo quieres que afecte al margen al final de un elemento, entonces es más apropiado utilizar `margin-bottom:0;`.
 
-Be explicit in which properties you set and take care to not inadvertently unset
-others with shorthand. E.g. if you only want to remove the bottom margin on an
-element then there is no sense in setting all margins to zero with `margin:0;`.
+Sé explícito con las propiedades que estableces y preocúpate de no descolocar las demás sin darte cuenta   con abreviaciones   P.ej, si sólo quieres quitar el margen inferior de un   elemento, entonces no tiene sentido establecer todos los márgenes a cero con `margin:0;`.
 
-Shorthand is good, but easily misused.
+La abreviación es buena, pero fácilmente mal utilizada.
 
 ## IDs
 
