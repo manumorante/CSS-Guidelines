@@ -377,8 +377,9 @@ Si tienes que construir un componente nuevo, divídelo en estructura y piel; con
 
 ## Layout
 
-All components you build should be left totally free of widths; they should
-always remain fluid and their widths should be governed by a parent/grid system.
+Todos los componente que construyas deberían quedar totalmente libres de anchuras; deberían   permanecer siempre fluidos y sus anchuras deberían estar regidas por un sistema padre/cuadrícula.
+
+Las alturas **nunca** deberían ser aplicadas a los elementos.  Las alturas sólo deberían ser  aplicadas a cosas que tenían dimensiones _antes_ de entrar al sitio (p.ej, imágenes y sprites).  Nunca jamás establezcas alturas en `p`s, `ul`s, `div`s, lo que sea. A menudo puedes conseguir el efecto deseado con interlineado, que es mucho más flexible.
 
 Heights should **never** be be applied to elements. Heights should only be
 applied to things which had dimensions _before_ they entered the site (i.e.
@@ -386,15 +387,9 @@ images and sprites). Never ever set heights on `p`s, `ul`s, `div`s, anything.
 You can often achieve the desired effect with `line-height` which is far more
 flexible.
 
-Grid systems should be thought of as shelves. They contain content but are not
-content in themselves. You put up your shelves then fill them with your stuff.
-By setting up our grids separately to our components you can move components
-around a lot more easily than if they had dimensions applied to them; this makes
-our front-ends a lot more adaptable and quick to work with.
+Los sistemas de retícula deberían ser considerados como estantes.   Contienen contenidos pero no son   contenidos en sí.   Tú colocas tus estantes, y después los llenas con tus cosas.   Colocando las celdas de forma separada a los componentes, puedes mover los componentes   con mucha más facilidad que si tuvieran dimensiones aplicadas; esto hace   nuestros front-ends mucho más adaptables y agiliza el trabajar con ellos.
 
-You should never apply any styles to a grid item, they are for layout purposes
-only. Apply styling to content _inside_ a grid item. Never, under _any_
-circumstances, apply box-model properties to a grid item.
+Nunca deberías aplicar estilos a un elemento de una tabla, son únicamente para propósitos de   maquetación.   Aplica el estilo al contenido del _interior_ del elemento de la tabla.   Nunca, bajo _ninguna_ circunstancia, apliques propiedades de caja a un elemento de una tabla.
 
 ## Sizing UIs
 
