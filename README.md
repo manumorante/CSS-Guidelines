@@ -53,7 +53,7 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
 * [Selector CSS fijo](#selector-fijo)
 * [`!important`](#important)
 * [Números mágicos y absolutos](#números-mágicos-y-absolutos)
-* [Conditional stylesheets](#conditional-stylesheets)
+* [Hojas de estilo condicionales](#hojas-de-estilo-condicionales)
 * [Debugging](#debugging)
 * [Preprocessors](#preprocessors)
 
@@ -485,7 +485,6 @@ Usar `!important` reiteradamente, por ejemplo para no verse en situaciones espec
 
 Un número mágico es un número que se utiliza porque "simplemente funciona".  Son malos porque rara vez trabajan con alguna razón real y no están por lo general muy preparados para cambios futuros y flexibilidad. Estos números tienden a arreglar síntomas y no problemas.
 
-
 Por ejemplo, usando `.dropdown-nav li:hover ul{ top:37px; }` para mover un dropdown al fondo de nav al hacer hover es malo, `37px` es un número mágico. `37px` solamente funciona aquí porque en este escenario particular el `.dropdown-nav` pasa para tener `37px` de altura.
 
 En su lugar deberías usar `.dropdown-nav li:hover ul{ top:100%; }` que significa que no importa como de alto sea `.dropdown-nav`, el dropdown estará siempre al 100% desde la parte superior.
@@ -494,16 +493,11 @@ Cada vez que escriba un número en el código piensa dos veces; si lo puedes evi
 
 Cada medida no modificable que se establece es un compromiso que podría no querer conservar necesariamente.
 
-## Conditional stylesheets
+## Hojas de estilo condicionales
 
-IE stylesheets can, by and large, be totally avoided. The only time an IE
-stylesheet may be required is to circumvent blatant lack of support (e.g. PNG
-fixes).
+Las hojas de estilo para IE pueden, en general, ser totalmente evitadas. La única vez que una hoja de estilo para IE   puede ser necesaria es para evitar carencia de soporte (ej. ajuste en imágenes PNG).
 
-As a general rule, all layout and box-model rules can and _will_ work without an
-IE stylesheet if you refactor and rework your CSS. This means you never want to
-see `<!--[if IE 7]> element{ margin-left:-9px; } < ![endif]-->` or other such
-CSS that is clearly using arbitrary styling to just ‘make stuff work’.
+Como regla general, todas las reglas de diseño y caja-modelo pueden y _van_ a trabajar sin una hoja de estilo IE si refactoriza y rehace su CSS. Esto significa que nunca querrás ver `<!--[if IE 7]> element{ margin-left:-9px; } < !   [endif]-->` u otro como CSS que esta claramente usando estilo arbitrario para hacer 'que cosas funcionen'.
 
 ## Debugging
 
