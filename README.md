@@ -49,7 +49,7 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
 * [IDs](#ids)
 * [Selectores](#selectores)
   * [Selectores sobre-calificados](#selectores-sobre-calificados)
-  * [Selector performance](#selector-performance)
+  * [Rendimiento de los selectores](#rendimiento-de-los-selectores)
 * [CSS selector intent](#css-selector-intent)
 * [`!important`](#important)
 * [Magic numbers and absolutes](#magic-numbers-and-absolutes)
@@ -456,12 +456,9 @@ Otro ejemplo de selector sobre-calificado podría ser `ul.nav li a{}`. Como  ant
 
 Another example of an over-qualified selector might be `ul.nav li a{}`. As
 
-### Selector performance
+### Rendimiento de los selectores
 
-Whilst it is true that browsers will only ever keep getting faster at rendering
-CSS, efficiency is something you could do to keep an eye on. Short, unnested
-selectors, not using the universal (`*{}`) selector as the key selector, and
-avoiding more complex CSS3 selectors should help circumvent these problems.
+Aunque es cierto que los navegadores siempre seguirán siendo cada vez más rápidos renderizando CSS, la eficiencia es algo que puedes hacer para estar pendiente. Selectores breves y no anidados, no usar el selector universal (`*{}`) como selector clave, y evitar selectores CSS3 más complejos debería ayudar a evitar estos problemas.
 
 ## CSS selector intent
 
