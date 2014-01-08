@@ -54,7 +54,7 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
 * [`!important`](#important)
 * [Números mágicos y absolutos](#números-mágicos-y-absolutos)
 * [Hojas de estilo condicionales](#hojas-de-estilo-condicionales)
-* [Debugging](#debugging)
+* [Depurado](#depurado)
 * [Preprocessors](#preprocessors)
 
 ---
@@ -499,18 +499,13 @@ Las hojas de estilo para IE pueden, en general, ser totalmente evitadas. La úni
 
 Como regla general, todas las reglas de diseño y caja-modelo pueden y _van_ a trabajar sin una hoja de estilo IE si refactoriza y rehace su CSS. Esto significa que nunca querrás ver `<!--[if IE 7]> element{ margin-left:-9px; } < !   [endif]-->` u otro como CSS que esta claramente usando estilo arbitrario para hacer 'que cosas funcionen'.
 
-## Debugging
+## Depurado
 
-If you run into a CSS problem **take code away before you start adding more** in
-a bid to fix it. The problem exists in CSS that is already written, more CSS
-isn’t the right answer!
+Si se encuentra con un problema de código CSS **espera antes de empezar a añadir más** en un intento de arreglarlo. El problema existe en CSS que ya está escrito, ¡más CSS no es la respuesta correcta!
 
-Delete chunks of markup and CSS until your problem goes away, then you can
-determine which part of the code the problem lies in.
+Elimina trozos de código y CSS hasta que el problema desaparezca, entonces podrás determinar en qué parte del código radica problema.
 
-It can be tempting to put an `overflow:hidden;` on something to hide the effects
-of a layout quirk, but overflow was probably never the problem; **fix the
-problem, not its symptoms.**
+Puede ser tentador poner un `overflow:hidden;` para ocultar algún efecto extraño, pero el overflow nunca suele ser el problema; **arregla el problema, no sus síntomas**.
 
 ## Preprocessors
 
