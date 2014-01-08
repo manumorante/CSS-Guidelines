@@ -52,7 +52,7 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
   * [Rendimiento de los selectores](#rendimiento-de-los-selectores)
 * [Selector CSS fijo](#selector-fijo)
 * [`!important`](#important)
-* [Magic numbers and absolutes](#magic-numbers-and-absolutes)
+* [Números mágicos y absolutos](#números-mágicos-y-absolutos)
 * [Conditional stylesheets](#conditional-stylesheets)
 * [Debugging](#debugging)
 * [Preprocessors](#preprocessors)
@@ -481,27 +481,18 @@ Esta bien usar `!important` únicamente sobre clases "helper" (de ayuda). Añadi
 
 Usar `!important` reiteradamente, por ejemplo para no verse en situaciones específicamente desagradables no está recomendado. Vuelve a escribir tu CSS e intentan combatir estos problemas refactorizando tus selectores. Mantener tus selectores cortos y evitar añadir ID's te ayudará enormemente  
 
-## Magic numbers and absolutes
+## Números mágicos y absolutos
 
-A magic number is a number which is used because ‘it just works’. These are bad
-because they rarely work for any real reason and are not usually very
-futureproof or flexible/forgiving. They tend to fix symptoms and not problems.
+Un número mágico es un número que se utiliza porque "simplemente funciona".  Son malos porque rara vez trabajan con alguna razón real y no están por lo general muy preparados para cambios futuros y flexibilidad. Estos números tienden a arreglar síntomas y no problemas.
 
-For example, using `.dropdown-nav li:hover ul{ top:37px; }` to move a dropdown
-to the bottom of the nav on hover is bad, as 37px is a magic number. 37px only
-works here because in this particular scenario the `.dropdown-nav` happens to be
-37px tall.
 
-Instead you should use `.dropdown-nav li:hover ul{ top:100%; }` which means no
-matter how tall the `.dropdown-nav` gets, the dropdown will always sit 100% from
-the top.
+Por ejemplo, usando `.dropdown-nav li:hover ul{ top:37px; }` para mover un dropdown al fondo de nav al hacer hover es malo, `37px` es un número mágico. `37px` solamente funciona aquí porque en este escenario particular el `.dropdown-nav` pasa para tener `37px` de altura.
 
-Every time you hard code a number think twice; if you can avoid it by using
-keywords or ‘aliases’ (i.e. `top:100%` to mean ‘all the way from the top’)
-or&mdash;even better&mdash;no measurements at all then you probably should.
+En su lugar deberías usar `.dropdown-nav li:hover ul{ top:100%; }` que significa que no importa como de alto sea `.dropdown-nav`, el dropdown estará siempre al 100% desde la parte superior.
 
-Every hard-coded measurement you set is a commitment you might not necessarily
-want to keep.
+Cada vez que escriba un número en el código piensa dos veces; si lo puedes evitar usando palabras clave o alias (ej. `top: 100%` significa 'todos los caminos desde arriba') o &mdash;aún mejor&mdash; no deberías medir nada en absoluto.  
+
+Cada medida no modificable que se establece es un compromiso que podría no querer conservar necesariamente.
 
 ## Conditional stylesheets
 
