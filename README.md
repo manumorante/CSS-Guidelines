@@ -443,3 +443,147 @@ Los selectores que son demasiado largos también presentan problemas de rendimie
 Asegúrate de que los estilos no sean dependientes de la localización donde sea posible, y asegúrate de que los selectores son agradables y cortos.
 
 Los selectores en su totalidad deberían mantenerse cortos (p.ej, una clase de profundidad) pero los nombres de las clases en sí deberían ser tan largos como necesiten ser. Una clase de `.user-avatar` es mucho mejor que `.usr-avt`.
+
+**Recuerda:** las clases no son semánticas o no semánticas; son sensatas o insensatas!  Deja de estresarte por los nombres de clases "semánticos" y elige algo sensato y seguro.
+
+### Over-qualified selectors
+
+As discussed above, qualified selectors are bad news.
+
+An over-qualified selector is one like `div.promo`. You could probably get the
+same effect from just using `.promo`. Of course sometimes you will _want_ to
+qualify a class with an element (e.g. if you have a generic `.error` class that
+needs to look different when applied to different elements (e.g.
+`.error{ color:red; }` `div.error{ padding:14px; }`)), but generally avoid it
+where possible.
+
+Another example of an over-qualified selector might be `ul.nav li a{}`. As
+above, we can instantly drop the `ul` and because we know `.nav` is a list, we
+therefore know that any `a` _must_ be in an `li`, so we can get `ul.nav li a{}`
+down to just `.nav a{}`.
+
+### Selector performance
+
+Whilst it is true that browsers will only ever keep getting faster at rendering
+CSS, efficiency is something you could do to keep an eye on. Short, unnested
+selectors, not using the universal (`*{}`) selector as the key selector, and
+avoiding more complex CSS3 selectors should help circumvent these problems.
+
+## CSS selector intent
+
+Instead of using selectors to drill down the DOM to an element, it is often best
+to put a class on the element you explicitly want to style. Let’s take a
+specific example with a selector like `.header ul{}`…
+
+Let’s imagine that `ul` is indeed the main navigation for our website. It lives
+in the header as you might expect and is currently the only `ul` in there;
+`.header ul{}` will work, but it’s not ideal or advisable. It’s not very future
+proof and certainly not explicit enough. As soon as we add another `ul` to that
+header it will adopt the styling of our main nav and the the chances are it
+won’t want to. This means we either have to refactor a lot of code _or_ undo a
+lot of styling on subsequent `ul`s in that `.header` to remove the effects of
+the far reaching selector.
+
+Your selector’s intent must match that of your reason for styling something;
+ask yourself **‘am I selecting this because it’s a `ul` inside of `.header` or
+because it is my site’s main nav?’**. The answer to this will determine your
+selector.
+
+Make sure your key selector is never an element/type selector or
+object/abstraction class. You never really want to see selectors like
+`.sidebar ul{}` or `.footer .media{}` in our theme stylesheets.
+
+Be explicit; target the element you want to affect, not its parent. Never assume
+that markup won’t change. **Write selectors that target what you want, not what
+happens to be there already.**
+
+For a full write up please see my article
+[Shoot to kill; CSS selector intent](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/)
+
+## `!important`
+
+It is okay to use `!important` on helper classes only. To add `!important`
+preemptively is fine, e.g. `.error{ color:red!important }`, as you know you will
+**always** want this rule to take precedence.
+
+Using `!important` reactively, e.g. to get yourself out of nasty specificity
+situations, is not advised. Rework your CSS and try to combat these issues by
+refactoring your selectors. Keeping your selectors short and avoiding IDs will
+help out here massively.
+
+## Magic numbers and absolutes
+
+A magic number is a number which is used because ‘it just works’. These are bad
+because they rarely work for any real reason and are not usually very
+futureproof or flexible/forgiving. They tend to fix symptoms and not problems.
+
+For example, using `.dropdown-nav li:hover ul{ top:37px; }` to move a dropdown
+to the bottom of the nav on hover is bad, as 37px is a magic number. 37px only
+works here because in this particular scenario the `.dropdown-nav` happens to be
+37px tall.
+
+Instead you should use `.dropdown-nav li:hover ul{ top:100%; }` which means no
+matter how tall the `.dropdown-nav` gets, the dropdown will always sit 100% from
+the top.
+
+Every time you hard code a number think twice; if you can avoid it by using
+keywords or ‘aliases’ (i.e. `top:100%` to mean ‘all the way from the top’)
+or&mdash;even better&mdash;no measurements at all then you probably should.
+
+Every hard-coded measurement you set is a commitment you might not necessarily
+want to keep.
+
+## Conditional stylesheets
+
+IE stylesheets can, by and large, be totally avoided. The only time an IE
+stylesheet may be required is to circumvent blatant lack of support (e.g. PNG
+fixes).
+
+As a general rule, all layout and box-model rules can and _will_ work without an
+IE stylesheet if you refactor and rework your CSS. This means you never want to
+see `<!--[if IE 7]> element{ margin-left:-9px; } < ![endif]-->` or other such
+CSS that is clearly using arbitrary styling to just ‘make stuff work’.
+
+## Debugging
+
+If you run into a CSS problem **take code away before you start adding more** in
+a bid to fix it. The problem exists in CSS that is already written, more CSS
+isn’t the right answer!
+
+Delete chunks of markup and CSS until your problem goes away, then you can
+determine which part of the code the problem lies in.
+
+It can be tempting to put an `overflow:hidden;` on something to hide the effects
+of a layout quirk, but overflow was probably never the problem; **fix the
+problem, not its symptoms.**
+
+## Preprocessors
+
+Sass is my preprocessor of choice. **Use it wisely.** Use Sass to make your CSS
+more powerful but avoid nesting like the plague! Nest only when it would
+actually be necessary in vanilla CSS, e.g.
+
+    .header{}
+    .header .site-nav{}
+    .header .site-nav li{}
+    .header .site-nav li a{}
+
+Would be wholly unnecessary in normal CSS, so the following would be **bad**
+Sass:
+
+    .header{
+        .site-nav{
+            li{
+                a{}
+            }
+        }
+    }
+
+If you were to Sass this up you’d write it as:
+
+    .header{}
+    .site-nav{
+        li{}
+        a{}
+    }
+
