@@ -48,7 +48,7 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
 * [Abreviaturas](#abreviaturas)
 * [IDs](#ids)
 * [Selectores](#selectores)
-  * [Over qualified selectors](#over-qualified-selectors)
+  * [Selectores sobre-calificados](#selectores-sobre-calificados)
   * [Selector performance](#selector-performance)
 * [CSS selector intent](#css-selector-intent)
 * [`!important`](#important)
@@ -446,21 +446,15 @@ Los selectores en su totalidad deberían mantenerse cortos (p.ej, una clase de p
 
 **Recuerda:** las clases no son semánticas o no semánticas; son sensatas o insensatas!  Deja de estresarte por los nombres de clases "semánticos" y elige algo sensato y seguro.
 
-### Over-qualified selectors
+### Selectores sobre-calificados
 
-As discussed above, qualified selectors are bad news.
+Como analizamos anteriormente, los selectores calificados son malas noticias.  
 
-An over-qualified selector is one like `div.promo`. You could probably get the
-same effect from just using `.promo`. Of course sometimes you will _want_ to
-qualify a class with an element (e.g. if you have a generic `.error` class that
-needs to look different when applied to different elements (e.g.
-`.error{ color:red; }` `div.error{ padding:14px; }`)), but generally avoid it
-where possible.
+Un selector sobre calificado es uno como `div.promo`. Probablemente podrías obtener el  mismo efecto usando solamente `.promo`. Por supuesto que algunas veces _querrás_  calificar una clase con un elemento (p.ej, si tienes una clase `.error` genérica que necesita resultar diferente cuando se aplica a elementos diferentes (p.ej, `.error{ color:red;` } `div.error{padding: 14px; }`)), pero por lo general, evítalo cuando sea posible.  
+
+Otro ejemplo de selector sobre-calificado podría ser `ul.nav li a{}`. Como  anteriormente, podemos omitir instantáneamente el `ul`, y como sabemos que `.nav` es una lista, sabemos que cualquier `a` tiene que estar en un `li` , así que podemos reducir `ul.nav li a{}`   a solo `.nav a{}`.  
 
 Another example of an over-qualified selector might be `ul.nav li a{}`. As
-above, we can instantly drop the `ul` and because we know `.nav` is a list, we
-therefore know that any `a` _must_ be in an `li`, so we can get `ul.nav li a{}`
-down to just `.nav a{}`.
 
 ### Selector performance
 
