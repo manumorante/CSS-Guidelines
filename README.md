@@ -47,7 +47,7 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
   * [Dimensionando fuentes](#Dimensionando-fuentes)
 * [Abreviaturas](#abreviaturas)
 * [IDs](#ids)
-* [Selectors](#selectors)
+* [Selectores](#selectores)
   * [Over qualified selectors](#over-qualified-selectors)
   * [Selector performance](#selector-performance)
 * [CSS selector intent](#css-selector-intent)
@@ -432,24 +432,14 @@ Pueden ser usados en tus anotaciones para JS e identificadores de fragmentos, pe
 
 Las clases tienen la ventaja de ser reutilizables (incluso si no queremos, podemos) y tienen una especificidad baja y buena. La especificidad es una de las formas más rápidas de encontrarse con dificultades en los proyectos, y mantenerla baja siempre es fundamental. Un ID es **255** veces más específico que una clase, así que no los utilices en CSS _nunca_.
 
-## Selectors
+## Selectores
 
-Keep selectors short, efficient and portable.
+Mantén los selectores cortos, eficientes y transferibles.
 
-Heavily location-based selectors are bad for a number of reasons. For example,
-take `.sidebar h3 span{}`. This selector is too location-based and thus we
-cannot move that `span` outside of a `h3` outside of `.sidebar` and maintain
-styling.
+Los selectores con una ubicación muy fuerte son malos por varias razones. Por ejemplo, tome `.sidebar h3 span{}`. Este selector está demasiado localizado, y por lo tanto no podemos mover ese `span` fuera de un `h3` fuera de `.sidebar` y mantener el estilo.  
 
-Selectors which are too long also introduce performance issues; the more checks
-in a selector (e.g. `.sidebar h3 span` has three checks, `.content ul p a` has
-four), the more work the browser has to do.
+Los selectores que son demasiado largos también presentan problemas de rendimiento; cuantas más comprobaciones en un selector (p. ej, `.sidebar h3 span` tiene tres comprobaciones, `.content ul p a` tiene cuatro), más trabajo tiene que hacer el navegador.
 
-Make sure styles aren’t dependent on location where possible, and make sure
-selectors are nice and short.
+Asegúrate de que los estilos no sean dependientes de la localización donde sea posible, y asegúrate de que los selectores son agradables y cortos.
 
-Selectors as a whole should be kept short (e.g. one class deep) but the class
-names themselves should be as long as they need to be. A class of `.user-avatar`
-is far nicer than `.usr-avt`.
-
-**Remember:** classes are neither sem
+Los selectores en su totalidad deberían mantenerse cortos (p.ej, una clase de profundidad) pero los nombres de las clases en sí deberían ser tan largos como necesiten ser. Una clase de `.user-avatar` es mucho mejor que `.usr-avt`.
