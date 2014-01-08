@@ -50,7 +50,7 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
 * [Selectores](#selectores)
   * [Selectores sobre-calificados](#selectores-sobre-calificados)
   * [Rendimiento de los selectores](#rendimiento-de-los-selectores)
-* [CSS selector intent](#css-selector-intent)
+* [Selector CSS fijo](#selector-fijo)
 * [`!important`](#important)
 * [Magic numbers and absolutes](#magic-numbers-and-absolutes)
 * [Conditional stylesheets](#conditional-stylesheets)
@@ -460,35 +460,19 @@ Another example of an over-qualified selector might be `ul.nav li a{}`. As
 
 Aunque es cierto que los navegadores siempre seguirán siendo cada vez más rápidos renderizando CSS, la eficiencia es algo que puedes hacer para estar pendiente. Selectores breves y no anidados, no usar el selector universal (`*{}`) como selector clave, y evitar selectores CSS3 más complejos debería ayudar a evitar estos problemas.
 
-## CSS selector intent
+## Selector CSS fijo
 
-Instead of using selectors to drill down the DOM to an element, it is often best
-to put a class on the element you explicitly want to style. Let’s take a
-specific example with a selector like `.header ul{}`…
+En lugar de usar selectores para profundizar el DOM a un elemento, a menudo es mejor poner una clase en el elemento que específicamente quieres dar estilo. Vamos a hacer ejemplo específico con un selector como `.header ul{}`…
 
-Let’s imagine that `ul` is indeed the main navigation for our website. It lives
-in the header as you might expect and is currently the only `ul` in there;
-`.header ul{}` will work, but it’s not ideal or advisable. It’s not very future
-proof and certainly not explicit enough. As soon as we add another `ul` to that
-header it will adopt the styling of our main nav and the the chances are it
-won’t want to. This means we either have to refactor a lot of code _or_ undo a
-lot of styling on subsequent `ul`s in that `.header` to remove the effects of
-the far reaching selector.
+Vamos a imaginar que `ul` es en realidad la principal navegación para nuestra sitio web. Vive en el header como quizá esperas y es el unico `ul` ahí actualmente; `.header ul{}` funcionaría, pero no es ideal ni aconsejable. No tiene mucho futuro en pruebas y ciertamente no explícita lo suficiente. Tan pronto como añadamos otro `ul` a éste header adoptará el estilo de nuestra navegación principal y probablemente no sea lo que queramos. Esto significa que también tenemos que volver a rehacer un monton de código o deshacer un montón de estilos en subsecuentes `uls` en este `.header` para eliminar los efectos del selector de largo alcance.  
 
-Your selector’s intent must match that of your reason for styling something;
-ask yourself **‘am I selecting this because it’s a `ul` inside of `.header` or
-because it is my site’s main nav?’**. The answer to this will determine your
-selector.
+La intención te tu selector debe coincidir con el motivo por el que le das estilo a algo; pregúntate a ti mismo **“¿estoy seleccionando esto porque es un `ul` dentro de `.header` o porque es la navegación principal de mi sito?"**. La respuesta a esto determinará tu selector.
 
-Make sure your key selector is never an element/type selector or
-object/abstraction class. You never really want to see selectors like
-`.sidebar ul{}` or `.footer .media{}` in our theme stylesheets.
+Asegúrate de que tu selector nunca es un selector elemento/tipo o clases objecto/abstracciones. Realmente tu nunca quieres ver selectores como `.sidebar ul{}` o `.footer .media{}` en nuestras hojas de estilos.
 
-Be explicit; target the element you want to affect, not its parent. Never assume
-that markup won’t change. **Write selectors that target what you want, not what
-happens to be there already.**
+Sé explícito; fija el elemento al que quieres influir, no a sus padres. Nunca asumas que el marcado no va a cambiar.   **Escribe selectores que influyan en lo que tu quieres, no en lo que ocurre allí ya**.
 
-For a full write up please see my article
+Para una descripción completa por favor vea mi artículo
 [Shoot to kill; CSS selector intent](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/)
 
 ## `!important`
