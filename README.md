@@ -361,33 +361,19 @@ Escribiendo anotaciones primero, puedes centrarte en los datos, contenido y sem�
 
 ## OOCSS
 
-I work in an OOCSS manner; I split components into structure (objects) and
-skin (extensions). As an **analogy** (note, not example) take the following:
+Yo trabajo de una forma OOCSS; divido los componentes en estructura (objetos) y  piel (extensiones). Como **analogía** (nota, no ejemplo) toma lo siguiente:
 
-    .room{}
+    .habitación{}
 
-    .room--kitchen{}
-    .room--bedroom{}
-    .room--bathroom{}
+    .habitación--cocina{}
+    .habitación--dormitorio{}
+    .habitación--baño{}
 
-We have several types of room in a house, but they all share similar traits;
-they all have floors, ceilings, walls and doors. We can share this information
-in an abstracted `.room{}` class. However we have specific types of room that
-are different from the others; a kitchen might have a tiled floor and a bedroom
-might have carpets, a bathroom might not have a window but a bedroom most likely
-will, each room likely has different coloured walls. OOCSS teaches us to
-abstract the shared styles out into a base object and then _extend_ this
-information with more specific classes to add the unique treatment(s).
+Tenemos muchos tipos de habitaciones en una casa, pero todas comparten característica similares;   todas ellas tienen suelo, techo, paredes y puertas. Podemos compartir esta información en una clase abstracta `.habitación{}`. Sin embargo, tenemos tipos específicos de habitación que son diferentes a las demás; una cocina seguramente tenga baldosas en el suelo y un dormitorio puede tener alfombras, el cuarto de baño puede no tener una ventana pero el dormitorio probablemente la tenga, cada habitación seguramente tenga la paredes pintadas de diferentes colores. OOCSS nos enseña   a abstraer estilos compartidos en un objeto base y después _extender_ esta información con clases más específicas para añadir los tratos únicos.
 
-So, instead of building dozens of unique components, try and spot repeated
-design patterns across them all and abstract them out into reusable classes;
-build these skeletons as base ‘objects’ and then peg classes onto these to
-extend their styling for more unique circumstances.
+Así que, en lugar de construir docenas de componentes únicos, prueba y descubre  patrones de diseños a través de todos ellos, y abstráelos en clases reutilizables; construye estas estructuras como 'objetos' base y después fija las clases a ellos para   extender su estilo para unas circunstancias más únicas.
 
-If you have to build a new component split it into structure and skin; build the
-structure of the component using very generic classes so that we can reuse that
-construct and then use more specific classes to skin it up and add design
-treatments.
+Si tienes que construir un componente nuevo, divídelo en estructura y piel; construye la  estructura del componente usando clases muy genéricas para que podamos reutilizar esa   construcción y luego usar clases más específicas para cubrirla y añadir tratamientos de diseño.
 
 ## Layout
 
