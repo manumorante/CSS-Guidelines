@@ -43,7 +43,7 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
 * [Construir nuevos componentes](#construir-nuevos-componentes)
 * [OOCSS](#oocss)
 * [Layout](#layout)
-* [Sizing UIs](#sizing-uis)
+* [Dimensionando ULs](#dimensionando-uls)
   * [Font sizing](#font-sizing)
 * [Shorthand](#shorthand)
 * [IDs](#ids)
@@ -391,28 +391,20 @@ Los sistemas de retícula deberían ser considerados como estantes.   Contienen 
 
 Nunca deberías aplicar estilos a un elemento de una tabla, son únicamente para propósitos de   maquetación.   Aplica el estilo al contenido del _interior_ del elemento de la tabla.   Nunca, bajo _ninguna_ circunstancia, apliques propiedades de caja a un elemento de una tabla.
 
-## Sizing UIs
+## Dimensionando ULs
 
-I use a combination of methods for sizing UIs. Percentages, pixels, ems, rems
-and nothing at all.
+Yo uso una combinación de métodos para dimensionar UIs.   Porcentajes, píxeles, ems, rems   y nada en absoluto.
 
-Grid systems should, ideally, be set in percentages. Because I use grid systems
-to govern widths of columns and pages, I can leave components totally free of
-any dimensions (as discussed above).
+Los sistemas de retícula deberían, idealmente, ser colocados en porcentajes.   Ya que yo utilizo sistemas de retícula   para determinar las anchuras de las columnas y páginas, puedo dejar los componentes completamente libres de   cualquier dimensión (como expliqué antes).
 
-Font sizes I set in rems with a pixel fallback. This gives the accessibility
-benefits of ems with the confidence of pixels. Here is a handy Sass mixin to
-work out a rem and pixel fallback for you (assuming you set your base font
-size in a variable somewhere):
+Pongo el tamaño de la fuente en rems con un pixel fallback. Esto da los beneficios de accesibilidad de los ems con la seguridad de los píxels.   Aquí  tienes un útil recurso de mixin de Sass para   usar píxeles y rems (suponiendo que establezcas tu tamaño de fuente   base en una variable en algún sitio): 
 
     @mixin font-size($font-size){
         font-size:$font-size +px;
         font-size:$font-size / $base-font-size +rem;
     }
 
-I only use pixels for items whose dimensions were defined before the came into
-the site. This includes things like images and sprites whose dimensions are
-inherently set absolutely in pixels.
+Yo solamente uso los píxeles para los elementos cuyas dimensiones estaban ya definidas antes de entrar al   sitio.   Esto incluye cosas como imágenes y sprites cuyas dimensiones son   intrínsecamente establecidas absolutamente en píxels.
 
 ### Font sizing
 
