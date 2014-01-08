@@ -477,14 +477,9 @@ Para una descripción completa por favor vea mi artículo
 
 ## `!important`
 
-It is okay to use `!important` on helper classes only. To add `!important`
-preemptively is fine, e.g. `.error{ color:red!important }`, as you know you will
-**always** want this rule to take precedence.
+Esta bien usar `!important` únicamente sobre clases "helper" (de ayuda). Añadir `!important` preventivamente está bien, ej: `.error{ color:red !important}`, como sabes, esta regla **siempre** tendrá prioridad.
 
-Using `!important` reactively, e.g. to get yourself out of nasty specificity
-situations, is not advised. Rework your CSS and try to combat these issues by
-refactoring your selectors. Keeping your selectors short and avoiding IDs will
-help out here massively.
+Usar `!important` reiteradamente, por ejemplo para no verse en situaciones específicamente desagradables no está recomendado. Vuelve a escribir tu CSS e intentan combatir estos problemas refactorizando tus selectores. Mantener tus selectores cortos y evitar añadir ID's te ayudará enormemente  
 
 ## Magic numbers and absolutes
 
