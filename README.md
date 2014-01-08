@@ -424,18 +424,13 @@ La abreviación es buena, pero fácilmente mal utilizada.
 
 ## IDs
 
-A quick note on IDs in CSS before we dive into selectors in general.
+Una nota rápida sobre los IDs en CSS antes de que nos metamos en los selectores en general.  
 
-**NEVER use IDs in CSS.**
+**NUNCA uses IDs en CSS.**
 
-They can be used in your markup for JS and fragment identifiers but use only
-classes for styling. You don’t want to see a single ID in any stylesheets!
+Pueden ser usados en tus anotaciones para JS e identificadores de fragmentos, pero utiliza sólo   las clases para diseñar. ¡No quieres ver ni un solo ID en ninguna hoja de estilos!
 
-Classes come with the benefit of being reusable (even if we don’t want to, we
-can) and they have a nice, low specificity. Specificity is one of the quickest
-ways to run into difficulties in projects and keeping it low at all times is
-imperative. An ID is **255** times more specific than a class, so never ever use
-them in CSS _ever_.
+Las clases tienen la ventaja de ser reutilizables (incluso si no queremos, podemos) y tienen una especificidad baja y buena. La especificidad es una de las formas más rápidas de encontrarse con dificultades en los proyectos, y mantenerla baja siempre es fundamental. Un ID es **255** veces más específico que una clase, así que no los utilices en CSS _nunca_.
 
 ## Selectors
 
