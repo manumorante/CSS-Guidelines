@@ -1,14 +1,4 @@
-# Notas generales sobre CSS, consejos y directrices
-
----
-
-## Traducciones
-
-* [Russian](https://github.com/matmuchrapna/CSS-Guidelines/blob/master/README%20Russian.md)
-* [Chinese](https://github.com/chadluo/CSS-Guidelines/blob/master/README.md)
-* [French](https://github.com/flexbox/CSS-Guidelines/blob/master/README.md)
-* [Spanish](https://github.com/unavezfui/CSS-Guidelines/blob/master/README.md)
-
+# Notas generales de CSS, consejos y directrices
 
 ---
 
@@ -31,8 +21,7 @@ La primera parte de este documento tratará de la sintaxis, formateo y estructur
   * [Títulos de sección](#títulos-de-sección)
 * [Orden del código](#orden-del-código)
 * [Anatomía de los conjuntos de reglas.](#anatomía-de-los-conjuntos-de-reglas)
-* [Convenciones de nombres](#convenciones-de-nombres)
-  * [Anclas JS](#anclas-js)
+* [Convenciones de nombres (BEM)](#convenciones-de-nombres)
   * [Internacionalización](#internacionalización)
 * [Comentarios](#comentarios)
   * [Comments on steroids](#comments-on-steroids)
